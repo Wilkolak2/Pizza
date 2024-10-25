@@ -34,7 +34,10 @@ class MyForm(QDialog):
         if self.ui.anaBtn.isChecked():
             dodatki.append("ananas")
 
-        self.ui.wynik.setText(f'Rozmiar twojej pizzy to: {size} , dodatki: {dodatki}')
+        if size != "none":
+            self.ui.wynik.setText(f'Rozmiar twojej pizzy to: {size} , dodatki: {dodatki}')
+        else:
+            self.ui.wynik.setText("nie wybrano rozmiaru")
 
 
 if __name__ == '__main__':
